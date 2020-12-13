@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.11)
-project(arrow-cls)
+project(ceph-cls)
 
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake/modules/")
 
@@ -21,10 +21,8 @@ endif()
 find_package(librados REQUIRED)
 include_directories(${LIBRADOS_INCLUDE_DIR})
 
-find_package(Arrow REQUIRED)
-include_directories(${ARROW_INCLUDE_DIR})
-
 find_package(GTest REQUIRED)
 include_directories(${GTEST_INCLUDE_DIRS})
 
 add_subdirectory(src)
+
