@@ -17,3 +17,11 @@ steps:
     cp build/lib/libcls_cls_sdk.so* /usr/lib64/rados-classes/
     scripts/micro-osd.sh test-cluster /etc/ceph
     build/bin/cls_sdk_test
+
+- id: build-rook-img
+  uses: docker://docker:19.03.10
+  args:
+  - build
+  -   --tag=jcnitdgp25/ceph-with-example-objclass:v15.2.4
+  -   --file=docker/release/Dockerfile
+  -   .
